@@ -22,29 +22,29 @@ addpath('sequences')
 % Get default sequence parameters
 paramsGre2d = SequenceParams('gre2d');
 
-paramsGre2d.sliceOrientation = SliceOrientation.SAG;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.AP;
-gre2d = skope_gre_2d(paramsGre2d);
-
-paramsGre2d.sliceOrientation = SliceOrientation.SAG;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.HF;
-gre2d = skope_gre_2d(paramsGre2d);
-
-paramsGre2d.sliceOrientation = SliceOrientation.COR;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.RL;
-gre2d = skope_gre_2d(paramsGre2d);
-
-paramsGre2d.sliceOrientation = SliceOrientation.COR;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.HF;
-gre2d = skope_gre_2d(paramsGre2d);
-
-paramsGre2d.sliceOrientation = SliceOrientation.TRA;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.RL;
-gre2d = skope_gre_2d(paramsGre2d);
+% paramsGre2d.sliceOrientation = SliceOrientation.SAG;
+% paramsGre2d.phaseEncDir = PhaseEncodingDirection.AP;
+% gre2d = skope_gre_2d(paramsGre2d);
+% 
+% paramsGre2d.sliceOrientation = SliceOrientation.SAG;
+% paramsGre2d.phaseEncDir = PhaseEncodingDirection.HF;
+% gre2d = skope_gre_2d(paramsGre2d);
+% 
+% paramsGre2d.sliceOrientation = SliceOrientation.COR;
+% paramsGre2d.phaseEncDir = PhaseEncodingDirection.RL;
+% gre2d = skope_gre_2d(paramsGre2d);
+% 
+% paramsGre2d.sliceOrientation = SliceOrientation.COR;
+% paramsGre2d.phaseEncDir = PhaseEncodingDirection.HF;
+% gre2d = skope_gre_2d(paramsGre2d);
 
 paramsGre2d.sliceOrientation = SliceOrientation.TRA;
-paramsGre2d.phaseEncDir = PhaseEncodingDirection.AP;
+paramsGre2d.phaseEncDir = PhaseEncodingDirection.RL;
 gre2d = skope_gre_2d(paramsGre2d);
+% 
+% paramsGre2d.sliceOrientation = SliceOrientation.TRA;
+% paramsGre2d.phaseEncDir = PhaseEncodingDirection.AP;
+% gre2d = skope_gre_2d(paramsGre2d);
 
 % Plot sequence information after sync 
 timeRange = [4.25 4.27];
