@@ -193,8 +193,14 @@ classdef (Abstract) PulseqBase < handle
 		        obj.cameraInterleaveTR = triggerTR - eps;
             end
 
+            % RR start >> 2025-09-19 commented out otherwise CamInterleaveTR too long
 	        %% Calculate duty cycle
+            obj.maxDutyCycleAQSys = 0.9; %NYOX RR mod 25.9.22
             dutyCycle = obj.cameraAcqDuration /  obj.cameraInterleaveTR;
+            fprintf('obj.cameraAcqDuration = %.2f ms\n', obj.cameraAcqDuration*1e3);
+            fprintf('cameraInterleaveTR = %.2f ms\n', obj.cameraInterleaveTR*1e3);
+            fprintf('NYOX maxDutyCycle = %.1f%%\n', obj.maxDutyCycleAQSys  * 100);
+            fprintf('Sequence DutyCycle = %.1f%%\n', dutyCycle * 100);
             if dutyCycle > obj.maxDutyCycleAQSys
 
 		        % Minimal TR that Skope AQ system will allow
@@ -210,6 +216,10 @@ classdef (Abstract) PulseqBase < handle
                obj.cameraInterleaveTR =  obj.cameraInterleaveTR + addTrig2Skip * triggerTR;
                obj.skipFactor = obj.skipFactor + addTrig2Skip;
             end
+            fprintf('obj.cameraAcqDuration = %.2f ms\n', obj.cameraAcqDuration*1e3);
+            fprintf('cameraInterleaveTR = %.2f ms\n', obj.cameraInterleaveTR*1e3);
+            fprintf('New Sequence DutyCycle = %.1f%%\n', dutyCycle * 100);
+            % RR end << 2025-09-19 commented out otherwise CamInterleaveTR too long
         end
 
         function t = roundUpToGRT(obj,t)

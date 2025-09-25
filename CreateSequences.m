@@ -56,25 +56,25 @@ gre2d.test();
 %% Create a 2D echo-planar imaging sequence for all directions
 paramsEpi2d = SequenceParams('epi2d');
 
-paramsEpi2d.sliceOrientation = SliceOrientation.SAG;
-paramsEpi2d.phaseEncDir = PhaseEncodingDirection.AP;
-epi2d = skope_epi_2d(paramsEpi2d);
-
-paramsEpi2d.sliceOrientation = SliceOrientation.SAG;
-paramsEpi2d.phaseEncDir = PhaseEncodingDirection.HF;
-epi2d = skope_epi_2d(paramsEpi2d);
-
-paramsEpi2d.sliceOrientation = SliceOrientation.COR;
-paramsEpi2d.phaseEncDir = PhaseEncodingDirection.RL;
-epi2d = skope_epi_2d(paramsEpi2d);
-
-paramsEpi2d.sliceOrientation = SliceOrientation.COR;
-paramsEpi2d.phaseEncDir = PhaseEncodingDirection.HF;
-epi2d = skope_epi_2d(paramsEpi2d);
-
-paramsEpi2d.sliceOrientation = SliceOrientation.TRA;
-paramsEpi2d.phaseEncDir = PhaseEncodingDirection.RL;
-epi2d = skope_epi_2d(paramsEpi2d);
+% paramsEpi2d.sliceOrientation = SliceOrientation.SAG;
+% paramsEpi2d.phaseEncDir = PhaseEncodingDirection.AP;
+% epi2d = skope_epi_2d(paramsEpi2d);
+% 
+% paramsEpi2d.sliceOrientation = SliceOrientation.SAG;
+% paramsEpi2d.phaseEncDir = PhaseEncodingDirection.HF;
+% epi2d = skope_epi_2d(paramsEpi2d);
+% 
+% paramsEpi2d.sliceOrientation = SliceOrientation.COR;
+% paramsEpi2d.phaseEncDir = PhaseEncodingDirection.RL;
+% epi2d = skope_epi_2d(paramsEpi2d);
+% 
+% paramsEpi2d.sliceOrientation = SliceOrientation.COR;
+% paramsEpi2d.phaseEncDir = PhaseEncodingDirection.HF;
+% epi2d = skope_epi_2d(paramsEpi2d);
+% 
+% paramsEpi2d.sliceOrientation = SliceOrientation.TRA;
+% paramsEpi2d.phaseEncDir = PhaseEncodingDirection.RL;
+% epi2d = skope_epi_2d(paramsEpi2d);
 
 paramsEpi2d.sliceOrientation = SliceOrientation.TRA;
 paramsEpi2d.phaseEncDir = PhaseEncodingDirection.AP;
@@ -209,3 +209,23 @@ spiral2d.plot(timeRange);
 
 % Test sequence
 spiral2d.test();
+
+
+%% rudy
+
+paramsEpi2d = SequenceParams('rr_epi2d');
+epi2d = skope_epi_2d(paramsEpi2d);
+
+%%
+% Plot sequence information
+timeRange = [5.999 6.070];
+epi2d.plot(timeRange);
+%%
+timeRange = [6.5 30];
+epi2d.plot(timeRange);
+%%
+
+epi2d.plot();
+%%
+% Test sequence
+epi2d.test();

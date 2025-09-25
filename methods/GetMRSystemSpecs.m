@@ -18,6 +18,11 @@ function specs = GetMRSystemSpecs(scannerType)
             specs.maxGrad = 40; 
             specs.maxSlew = 200; 
             specs.B0 = 6.98;
+        case 'Siemens Terra.X 7T T60'
+            specs.type = scannerType;            
+            specs.maxGrad = 80; 
+            specs.maxSlew = 200; 
+            specs.B0 = 6.98;
         case 'Siemens 9.4T SC72CD'
             specs.type = scannerType;            
             specs.maxGrad = 40; 
